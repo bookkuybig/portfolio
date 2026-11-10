@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pranwat Phatthanacharoen | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e0262e;--red2:#ff4a52;--bg:#07080c;--fg:#f2f2f4;--mut:#8b8e99;--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+section{overflow-x:clip}   /* the giant background word, off-screen flights and cursors must never create sideways scrolling on phones */
+body{background:var(--bg);color:var(--fg);font-family:Inter,"Noto Sans Thai",system-ui,sans-serif;overflow-x:clip;line-height:1.6}
+.d{font-family:Anton,Impact,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.98;font-weight:400}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 5vw}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;background:linear-gradient(var(--bg),transparent)}
+nav .logo{font-size:24px}nav .logo i{color:var(--red);font-style:normal}
+nav ul{display:flex;gap:30px;list-style:none;font-size:12px;color:#c9cbd3}
+nav ul a:hover{color:var(--red2)}
+.talk{font-size:12px;border:1px solid var(--line);padding:7px 14px;border-radius:20px}.talk:hover{border-color:var(--red)}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:#4aa3ff;z-index:40}
+section{position:relative;padding:110px 0}
+.tag{font-size:11px;letter-spacing:.18em;color:var(--mut);margin-bottom:22px}
+.tag b{color:var(--red);font-weight:600}
+/* hero */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:90px}
+.bgword{position:absolute;left:-1vw;top:12vh;font-size:min(30vw,420px);color:var(--red);opacity:.3;white-space:nowrap;z-index:0;user-select:none;line-height:.9}
+.hgrid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr 130px;gap:2vw;align-items:center;width:100%}
+.name{font-size:min(11vw,150px);text-shadow:0 6px 40px rgba(0,0,0,.6)}.name i{color:var(--red);font-style:normal}
+.role{color:#ff5a61;font-size:min(3.4vw,38px);margin:14px 0 18px;text-shadow:0 2px 14px rgba(7,8,12,.95),0 0 3px rgba(7,8,12,.8)}
+.surname,.hero p,.loc{text-shadow:0 2px 12px rgba(7,8,12,.95)}
+.hero p{max-width:420px;color:#c3c6cf;font-size:14px;margin-bottom:26px}
+.btn{display:inline-flex;gap:10px;align-items:center;background:var(--red);color:#fff;padding:12px 26px;font-size:13px;letter-spacing:.02em;font-weight:600;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%)}
+.btn:hover{background:var(--red2)}
+.loc{margin-top:22px;font-size:11px;color:var(--mut);letter-spacing:.14em}.loc:before{content:"\25CF ";color:var(--red)}
+.photo{position:relative;align-self:end;height:min(72vh,640px);display:flex;align-items:flex-end;justify-content:center}
+.photo img,.photo .ph{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 20px 40px rgba(0,0,0,.7))}
+.photo img{border-radius:6px;object-fit:cover;filter:contrast(1.05) saturate(.9) drop-shadow(0 20px 40px rgba(0,0,0,.7));-webkit-mask-image:linear-gradient(180deg,#000 68%,transparent 100%);mask-image:linear-gradient(180deg,#000 68%,transparent 100%)}
+/* hero photo: fills the right side of the hero and fades into the dark */
+.hgrid{position:static;grid-template-columns:1.2fr 1fr 120px}
+#hero .hero,#hero .stats{position:relative;z-index:3}
+#hero .stats{position:absolute;left:5vw;bottom:100px;flex-direction:row;gap:36px;align-items:flex-end}   /* #hero in the selector so these beat the base .stats rules further down */
+#hero .stats div{font-size:38px}
+#hero .stats small{margin-top:6px}
+.photo{position:absolute;right:0;top:0;width:66%;height:100%;overflow:hidden;z-index:1}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;border-radius:0;filter:contrast(1.06) saturate(.9);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 46%);mask-image:linear-gradient(90deg,transparent 0,#000 46%)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,8,12,.55) 0,transparent 22%,transparent 72%,var(--bg) 100%)}
+@media(max-width:860px){
+ .photo{position:relative;width:100%;height:56vh}
+ #hero .stats{position:relative;left:auto;bottom:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);align-items:start}
+ #hero .stats div{font-size:34px;line-height:1;text-align:left}
+ #hero .stats small{font-size:9px;line-height:1.35;margin-top:7px;letter-spacing:.1em}
+ .photo img{-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+}
+.surname{font-family:Anton,Impact,sans-serif;letter-spacing:.32em;font-size:min(2.6vw,26px);color:var(--fg);margin-top:4px}
+.it a{color:inherit;border-bottom:1px solid rgba(255,255,255,.25)}.it a:hover{color:var(--red2);border-color:var(--red2)}
+.ph{aspect-ratio:3/4;background:linear-gradient(180deg,#1a1b22,#0c0d12);border:1px dashed rgba(255,255,255,.2);display:grid;place-items:center;text-align:center;color:var(--mut);font-size:12px;padding:20px}
+.stats{display:flex;flex-direction:column;gap:30px}
+.stats div{font-size:46px;color:var(--red)}.stats small{display:block;font-family:Inter;font-size:10px;color:var(--mut);letter-spacing:.14em}
+.reel{position:absolute;left:5vw;bottom:36px;font-size:11px;letter-spacing:.14em;display:flex;gap:12px;align-items:center;z-index:2}
+.reel i{width:30px;height:30px;border:1px solid var(--fg);border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px}
+/* works */
+h2{font-size:min(8.5vw,92px);margin-bottom:34px}h2 em{color:var(--red);font-style:normal}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work .th{aspect-ratio:16/9;background:linear-gradient(135deg,#2a1214,#10131c 60%,#0c2538);border:1px solid var(--line);display:grid;place-items:center;color:var(--mut);font-size:11px;overflow:hidden}
+.work .th img{width:100%;height:100%;object-fit:cover}
+/* a work card works with or without a picture: to add one, put <div class="th"><img src="..." alt="..."></div> as the first child of the card */
+.work{display:block;border:1px solid var(--line);padding:24px 22px 22px;background:linear-gradient(135deg,rgba(224,38,46,.10),rgba(255,255,255,.02) 55%);transition:border-color .25s,transform .25s}
+.work:hover{border-color:var(--red)}
+.work .th{margin:-24px -22px 18px;border:0;border-bottom:1px solid var(--line)}
+.work h3{display:block;margin-top:0;font-size:17px;font-weight:600;line-height:1.3}
+.work h3 b{display:block;font-family:Anton,Impact,sans-serif;color:var(--red);font-size:34px;font-weight:400;margin-bottom:8px}
+.work small{color:var(--mut);font-size:12px;margin-left:0;margin-top:8px;display:block;line-height:1.5;font-weight:400}
+.logos{margin-top:70px;padding-top:30px;border-top:1px solid var(--line)}
+.logos .row{display:flex;gap:44px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.logos .row span{font-family:Anton,Impact,sans-serif;font-size:26px;color:#6a6d78;letter-spacing:.04em}
+/* recognition */
+.rec{display:grid;grid-template-columns:1fr 1.3fr;gap:5vw;align-items:start}
+.big{font-size:min(20vw,200px);color:var(--fg);display:flex;align-items:center;gap:8px}.big sup{font-size:.4em;color:var(--red);align-self:flex-start;margin-top:.15em}
+.rec p{color:#c3c6cf;font-size:14px;max-width:360px;margin:12px 0 20px}
+.list li{list-style:none;display:grid;grid-template-columns:30px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.list li span{font-size:11px;color:var(--mut)}.list li b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:24px}.list li small{display:block;color:var(--mut);font-size:11px;font-family:Inter}
+.list li time{font-size:13px;color:var(--red2)}
+/* story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:5vw}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3vw;margin-top:40px}
+.cols h4,.sub{font-size:11px;letter-spacing:.14em;color:var(--mut);margin-bottom:18px;font-weight:600}
+.edu b{display:block;font-size:14px}.edu small{display:block;color:var(--mut);font-size:12px;margin-bottom:14px}
+.step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:0 0 22px;position:relative}
+.step:before{content:"";position:absolute;left:12px;top:26px;bottom:0;width:1px;background:var(--line)}.step:last-child:before{display:none}
+.step i{font-style:normal;font-family:Anton,Impact,sans-serif;color:var(--red);font-size:17px}
+.step b{font-size:11px;letter-spacing:.14em}.step p{font-size:12px;color:#aeb1bc}
+.quote{background:linear-gradient(160deg,#c8202a,#8c1219);padding:34px 28px;font-size:22px;line-height:1.35;align-self:end;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.quote i{font-size:46px;line-height:.5;font-family:Anton,Impact}.quote cite{font-family:"Brush Script MT","Segoe Script",cursive;font-size:28px}
+/* experience */
+.xp{display:grid;grid-template-columns:1.6fr 1fr;gap:5vw}
+.job{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.job time{font-size:12px;color:var(--red2)}.job b{font-family:Anton,Impact,sans-serif;font-size:22px;font-weight:400;display:block}.job small{color:var(--mut);font-size:12px}.job p{font-size:13px;color:#aeb1bc}
+.wins li{list-style:none;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px}.wins li small{display:block;color:var(--mut)}
+/* contact */
+.ct{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:4vw;align-items:center}
+.ct .it{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}.ct .it i{color:var(--red);font-style:normal;font-size:18px}.ct small{display:block;font-size:10px;letter-spacing:.14em;color:var(--mut)}
+.mk{border:1px solid var(--line);aspect-ratio:4/3;display:grid;place-items:center;font-size:min(6vw,64px);color:var(--fg);text-align:center;background:radial-gradient(circle at 70% 30%,rgba(224,38,46,.25),transparent 60%)}.mk em{color:var(--red);font-style:normal}
+footer{padding:50px 0 120px;color:var(--mut);font-size:12px;border-top:1px solid var(--line)}
+/* swarm */
+.pre{opacity:0!important}
+.rv{transition:opacity .5s,transform .5s}
+@keyframes wipeR{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.9)}}
+@keyframes slideIn{from{opacity:0;transform:translateY(-34px)}}
+@keyframes blurIn{from{opacity:0;filter:blur(10px)}}
+.fx-wipeR{animation:wipeR .65s cubic-bezier(.4,0,.2,1);transition:none}
+.fx-scaleIn{animation:scaleIn .5s cubic-bezier(.2,.8,.2,1);transition:none}
+.fx-slideIn{animation:slideIn .55s cubic-bezier(.2,.9,.3,1.2);transition:none}
+.fx-blurIn{animation:blurIn .55s ease-out;transition:none}
+.typo{color:#ff4a52;text-decoration:underline wavy #ff4a52}
+.ag .cm{position:absolute;left:14px;top:30px;background:rgba(14,15,20,.96);color:#f2f2f4;border:1px solid var(--c);border-radius:3px 10px 10px 10px;padding:3px 9px;font:11px Inter,"Noto Sans Thai",sans-serif;white-space:nowrap;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s}
+.ag .cm.on{opacity:1;transform:none}
+.ag{position:absolute;left:0;top:0;z-index:50;pointer-events:none;opacity:0;transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s;will-change:transform}
+.ag svg{width:17px;height:17px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.7));transition:transform .15s}.ag.tap svg{transform:scale(.7)}
+.ag em{position:absolute;left:13px;top:13px;font-style:normal;font-size:9px;background:var(--c);color:#06070a;padding:0 6px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .2s}.ag.tap em,.ag.busy em{opacity:1}
+.sel{position:absolute;z-index:45;pointer-events:none;border:1.5px solid var(--c);background:color-mix(in srgb,var(--c) 9%,transparent);transition:width .4s cubic-bezier(.4,0,.2,1),height .4s cubic-bezier(.4,0,.2,1)}
+.sel b{position:absolute;width:7px;height:7px;background:#fff;border:1.5px solid var(--c)}
+.sel b:nth-child(1){left:-4px;top:-4px}.sel b:nth-child(2){right:-4px;top:-4px}.sel b:nth-child(3){left:-4px;bottom:-4px}.sel b:nth-child(4){right:-4px;bottom:-4px}
+@keyframes sin{from{opacity:0;transform:scale(1.03)}}
+#hud{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;gap:14px;align-items:center;background:rgba(18,19,26,.92);border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:11px;color:#d7d9e0;backdrop-filter:blur(8px)}
+#hud .dots{display:flex}#hud .dots i{width:10px;height:10px;border-radius:50%;margin-left:-3px;border:1.5px solid #18191f}
+#hud .bar{width:90px;height:3px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}#hud .bar i{display:block;height:100%;width:0;background:#4aa3ff;transition:width .3s}
+#hud button{background:#2563eb;color:#fff;border:0;border-radius:12px;padding:3px 10px;font-size:11px;cursor:pointer}
+@media(max-width:860px){
+ nav ul{display:none}
+ .hgrid,.rec,.story,.xp,.ct,.cols{grid-template-columns:1fr}
+ .works{grid-template-columns:1fr}.stats{flex-direction:row}.photo{height:50vh}
+ .surname{font-size:5.2vw}
+ .name{font-size:17vw}.role{font-size:6.2vw;margin:10px 0 14px}.bgword{font-size:34vw;top:14vh}
+ section{padding:80px 0}.big{font-size:34vw}
+ .job{grid-template-columns:1fr;gap:4px}
+ #hud .bar{display:none}
+ #hud{gap:10px;padding:7px 12px;font-size:10px;white-space:nowrap;max-width:94vw}#hud span{white-space:nowrap}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav>
+ <a class="logo d" href="#hero">PRANWAT<i>.</i></a>
+ <ul><li><a href="#works">Works</a></li><li><a href="#results">Results</a></li><li><a href="#about">About</a></li><li><a href="#journey">Journey</a></li><li><a href="#contact">Contact</a></li></ul>
+ <a class="talk" href="#contact">Let's talk</a>
+</nav>
+
+<!-- 01 HERO -->
+<section id="hero">
+ <div class="bgword d rv" aria-hidden="true">PORTFOLIO</div>
+ <div class="wrap hgrid">
+  <div class="hero">
+   <div class="d name rv">PRANWAT<i>.</i></div>
+   <div class="surname rv">PHATTHANACHAROEN</div>
+   <div class="d role rv">MATERIALS SCIENCE STUDENT<br>OPTICS &middot; HARDWARE &middot; ML</div>
+   <p class="rv">Materials science student who builds instruments, the software that runs them, and the models that read their data. Looking for an R&amp;D or engineering internship.</p>
+   <a class="btn rv" href="#works">VIEW MY WORK &rarr;</a>
+   <div class="loc rv">BANGKOK, THAILAND</div>
+  </div>
+  <div class="photo rv">
+   <img src="me.jpg" alt="Pranwat Phatthanacharoen">
+  </div>
+  <div class="stats">
+   <div class="d rv" data-to="10"><span class="num">00</span>+<small>RESEARCHERS IN THE 2PP TEAM</small></div>
+   <div class="d rv" data-to="5"><span class="num">00</span><small>PERSON TEAM AT CCIT</small></div>
+   <div class="d rv" data-to="300">~<span class="num">00</span><small>STUDENTS TOURED PER YEAR</small></div>
+  </div>
+ </div>
+ <div class="reel rv"><i>&#9654;</i>SCROLL TO EXPLORE</div>
+</section>
+
+<!-- 02 WORKS -->
+<section id="works">
+ <div class="wrap">
+  <div class="tag rv"><b>01</b> / SELECTED WORK</div>
+  <h2 class="d rv">THE WORK <em>THAT SPEAKS.</em></h2>
+  <div class="works">
+   <a class="work rv" href="#results"><h3><b>01</b>LED Interference Imaging<small>Bacterial species identification &middot; Naratanant Lab &middot; 2026</small></h3></a>
+   <a class="work rv" href="#journey"><h3><b>02</b>2PP Laser 3D Nanoprinting<small>Stage-control software &middot; team of 10+ &middot; 2026</small></h3></a>
+   <a class="work rv" href="#journey"><h3><b>03</b>Hospital-Lab Devices<small>Bacterial ID and inhibition-zone measurement &middot; CCIT &middot; 2026</small></h3></a>
+  </div>
+  <div class="logos rv">
+   <div class="tag">WHERE THE WORK HAPPENS</div>
+   <div class="row"><span>MAHIDOL UNIVERSITY</span><span>NARATANANT LAB</span><span>MuON SPIE</span><span>CCIT</span><span>QORTHIS</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- 03 RESULTS -->
+<section id="results">
+ <div class="wrap">
+  <div class="tag rv"><b>02</b> / THE RESULTS</div>
+  <h2 class="d rv">THE WORK.<br><em>THE RESULTS.</em></h2>
+  <div class="rec">
+   <div>
+    <div class="big d rv" data-to="97"><span class="num">00</span><sup>%</sup></div>
+    <div class="tag rv">CNN SPECIES CLASSIFICATION ACCURACY</div>
+    <p class="rv">A PyTorch CNN trained on LED interference images classifies bacterial species with 97% accuracy.</p>
+    <a class="btn rv" href="#about">HOW IT WORKS &darr;</a>
+   </div>
+   <ul class="list">
+    <li class="rv"><span>01</span><div><b>Prototype cost</b><small>Whole LED imaging device: optics, camera, electronics, 3D-printed housing</small></div><time>&lt; THB 10,000</time></li>
+    <li class="rv"><span>02</span><div><b>2PP stage control</b><small>Prints text, images and QR codes; extending to 3D microstructures and nanoscale circuit patterns</small></div><time>2026</time></li>
+    <li class="rv"><span>03</span><div><b>Camp for 80 students</b><small>Factory visits, host site and safety plan</small></div><time>2025</time></li>
+    <li class="rv"><span>04</span><div><b>Science outreach</b><small>Lab tours for about 300 high-school students a year</small></div><time>Annual</time></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<!-- 04 ABOUT -->
+<section id="about">
+ <div class="wrap">
+  <div class="tag rv"><b>03</b> / BEHIND THE WORK</div>
+  <div class="story">
+   <div>
+    <h2 class="d rv">NOT JUST THE WORK.<br><em>THE WAY OF THINKING.</em></h2>
+    <div class="cols">
+     <div class="edu rv">
+      <h4>EDUCATION &amp; SKILLS</h4>
+      <b>B.Sc. Materials Science and Nanoengineering</b><small>Mahidol University, International Program &middot; Aug 2024 &ndash; May 2028 (expected)</small>
+      <b>Coursework</b><small>Solid-State Physics &middot; Research Laboratory I &amp; II</small>
+      <b>Programming &amp; ML</b><small>Python, PyTorch, TensorFlow, OpenCV, scikit-learn, MATLAB</small>
+      <b>Hardware &amp; fabrication</b><small>Raspberry Pi, Arduino, ESP32, 3D printing, laser cutting</small>
+      <b>Characterization &amp; simulation</b><small>SEM, AFM, XRD, FTIR, UV-Vis &middot; ANSYS Mechanical, Lumerical FDTD</small>
+     </div>
+     <div class="rv">
+      <h4>HOW THE DEVICE WORKS</h4>
+      <div class="step"><i>01</i><div><b>THE LIGHT</b><p>LED illumination and light interference capture the physical features of bacterial samples</p></div></div>
+      <div class="step"><i>02</i><div><b>THE CODE</b><p>Python/OpenCV pipeline on a Raspberry Pi, then a PyTorch CNN that names the species</p></div></div>
+      <div class="step"><i>03</i><div><b>THE BUILD</b><p>Optics, camera, electronics and a 3D-printed housing in one working prototype</p></div></div>
+     </div>
+    </div>
+   </div>
+   <div class="quote rv"><i>&ldquo;</i><div>I build instruments, the software that runs them, and the models that read their data.</div><cite>Pranwat</cite></div>
+  </div>
+ </div>
+</section>
+
+<!-- 05 JOURNEY -->
+<section id="journey">
+ <div class="wrap">
+  <div class="d rv" style="font-size:min(5vw,56px);margin-bottom:30px">KEEP MOVING. <em style="color:var(--red);font-style:normal">KEEP MAKING.</em></div>
+  <div class="xp">
+   <div>
+    <div class="job rv"><time>OCT 2026 &ndash; NOW</time><div><b>Director &amp; Shareholder</b><small>QORTHIS INNOVATION Co., Ltd., Bangkok</small><p>Co-own and direct an automation and AI startup founded with two other shareholders; lead the AI work, currently focused on systems for medical applications.</p></div></div>
+    <div class="job rv"><time>JUN 2026 &ndash; NOW</time><div><b>Hardware &amp; ML Engineer (freelance)</b><small>CCIT</small><p>Lead hardware design and model training in a 5-person team building an image-based bacterial identification device and an automated inhibition-zone measurement device.</p></div></div>
+    <div class="job rv"><time>JUN 2026 &ndash; NOW</time><div><b>Software &amp; Stage-Control Developer</b><small>Two-Photon Polymerization (2PP) project, team of 10+ researchers</small><p>Develop the Python software that drives the motorized stage and print sequence of a 2PP laser 3D printer.</p></div></div>
+    <div class="job rv"><time>JAN 2026 &ndash; NOW</time><div><b>Undergraduate Researcher</b><small>Naratanant Lab, Mahidol University</small><p>Designed and built a low-cost LED interference imaging device for bacterial species identification, with a CNN that reaches 97% accuracy.</p></div></div>
+   </div>
+   <div>
+    <div class="d rv" style="font-size:min(5vw,56px)">BEYOND<br><em style="color:var(--red);font-style:normal">THE LAB.</em></div>
+    <ul class="wins" style="margin-top:20px">
+     <li class="rv">Treasurer, MuON SPIE Student Chapter<small>May 2026 &ndash; Now &middot; finances for ~10 members; built the chapter website</small></li>
+     <li class="rv">Camp Organizer, Faculty of Science Study-Visit Camp<small>Mar &ndash; Nov 2025 &middot; factory visits, host site and safety plan for 80 students</small></li>
+     <li class="rv">Science Outreach: MAS Camp, Open House, YMIC<small>Annual &middot; lab tours for ~300 high-school students a year</small></li>
+     <li class="rv">Student Council Member, Assumption College Thonburi<small>2021 &ndash; 2024 &middot; organized school events and MC'd ceremonies</small></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 06 CONTACT -->
+<section id="contact">
+ <div class="wrap">
+  <div class="tag rv"><b>04</b> / YOUR NEXT STORY</div>
+  <div class="ct">
+   <div>
+    <h2 class="d rv">LET'S WORK<br>TOGETHER<em>.</em></h2>
+    <p class="rv" style="color:#c3c6cf;font-size:14px;margin-bottom:20px">Looking for an R&amp;D or engineering internship in optics and photonics, semiconductors or materials. Get in touch.</p>
+    <a class="btn rv" href="mailto:pranwatbook@gmail.com">START A CONVERSATION &rarr;</a>
+   </div>
+   <div>
+    <div class="it rv"><i>&#9993;</i><div><small>EMAIL</small><a href="mailto:pranwatbook@gmail.com">pranwatbook@gmail.com</a></div></div>
+    <div class="it rv"><i>&#9711;</i><div><small>LINKEDIN</small><a href="https://linkedin.com/in/pranwat-phatthanacharoen-731043443">linkedin.com/in/pranwat-phatthanacharoen</a></div></div>
+    <div class="it rv"><i>&#9672;</i><div><small>GITHUB</small><a href="https://github.com/bookkuybig">github.com/bookkuybig</a></div></div>
+    <div class="it rv"><i>&#9906;</i><div><small>BASED IN</small>Bangkok, Thailand</div></div>
+   </div>
+   <div class="mk d rv">BUILD.<br><em>MEASURE.</em></div>
+  </div>
+ </div>
+</section>
+<footer><div class="wrap">&copy; 2026 Pranwat Phatthanacharoen</div></footer>
+
+<div id="hud"><span class="dots" id="dots"></span><span id="ag">0 agents</span><span id="ly">0 / 0 layers</span><span class="bar"><i id="bar"></i></span><button id="rep">Replay</button></div>
+
+<script>
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const rv=[...document.querySelectorAll('.rv')];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* progress line */
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{prog.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+
+/* agent swarm: many cursors select + reveal each layer as it scrolls into view */
+const COL=['#ff4a52','#4aa3ff','#ffd24a','#6be0a3','#c58bff','#ff9a4a','#4affd9','#ff6bd0'];
+const NAMES=['Claude','Layout','Copy','Style','Motion','Assets','Type','Color','Grid','Polish','Review','Build'];
+/* no fixed crew: every layer gets its own cursor, which flies in from the side, does the job, then leaves */
+const AG=new Set();let spawned=0;
+function spawn(x,y){const i=spawned++,c=COL[i%COL.length],d=document.createElement('div');d.className='ag';d.style.setProperty('--c',c);d.dataset.c=c;
+ d.innerHTML='<svg viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="'+c+'" stroke="#06070a" stroke-width="1.3" stroke-linejoin="round"/></svg><em>'+NAMES[i%NAMES.length]+'</em>';
+ d.style.transition='none';d.style.transform='translate('+x+'px,'+y+'px)';document.body.appendChild(d);d.offsetWidth;d.style.transition='';AG.add(d);return d}
+const dots=document.getElementById('dots');
+const clamp=(v,lo,hi)=>Math.min(Math.max(v,lo),hi);
+function aim(a,x,y,ms){if(ms)a.style.transition='transform '+ms+'ms cubic-bezier(.4,0,.2,1),opacity .4s';a.x=x;a.y=y;a.style.opacity=1;a.style.transform='translate('+x+'px,'+y+'px)'}
+const go=async(a,x,y,ms=400)=>{aim(a,x,y,ms);await sleep(ms+30)};
+function rnd(a,b){return a+Math.random()*(b-a)}
+/* agents and selection frames live in PAGE coordinates (position:absolute), so they scroll together with the content they are building */
+let built=0;const hudAg=document.getElementById('ag'),hudLy=document.getElementById('ly'),bar=document.getElementById('bar');
+function hud(){hudAg.textContent=AG.size+(AG.size===1?' agent':' agents');
+ dots.innerHTML='';[...AG].slice(0,5).forEach(a=>{const s=document.createElement('i');s.style.background=a.dataset.c;dots.appendChild(s)});
+ hudLy.textContent=built+' / '+rv.length+' layers';bar.style.width=(built/rv.length*100)+'%'}
+/* selection frame starts as a point at the top-left corner and is dragged out to the bottom-right by the agent */
+function selBox(r,a,instant){const s=document.createElement('div');s.className='sel';
+ s.style.cssText='left:'+(r.left-6)+'px;top:'+(r.top-6)+'px;--c:'+a.style.getPropertyValue('--c')+(instant?';transition:none;width:'+(r.width+12)+'px;height:'+(r.height+12)+'px':';width:0;height:0');
+ s.innerHTML='<b></b><b></b><b></b><b></b>';document.body.appendChild(s);
+ if(!instant)requestAnimationFrame(()=>requestAnimationFrame(()=>{s.style.width=(r.width+12)+'px';s.style.height=(r.height+12)+'px'}));return s}
+function target(k){const r=k.getBoundingClientRect();return{r:{left:r.left+scrollX,top:r.top+scrollY,width:r.width,height:Math.min(r.height,innerHeight*.8)}}}
+let epoch=0;
+/* several different "moves", picked at random (never the same twice in a row); tiny blocks only get the simple ones */
+let lastStyle='';
+/* typewriter: each character (grapheme, so Thai vowel/tone marks stay attached) is its own span, so layout never shifts while typing */
+const seg=window.Intl&&Intl.Segmenter?new Intl.Segmenter('th',{granularity:'grapheme'}):null;
+function typable(k){const t=k.textContent.trim();return t.length>=4&&t.length<=160&&!k.querySelector('img,svg,.ph,.th')&&!k.dataset.to}
+/* speech bubbles that hang off a cursor */
+const COMMENTS=['Make the colour darker','Align these two','Add some spacing','This looks good ✓','Scale it down a bit','Aligned ✓','Tweak spacing','Nice edges'];
+function say(a,t,ms=1500){let c=a.querySelector('.cm');if(!c){c=document.createElement('div');c.className='cm';a.appendChild(c)}c.textContent=t;c.classList.add('on');setTimeout(()=>c.classList.remove('on'),ms)}
+/* a plausible typo: next letter of the alphabet / next Thai consonant (only single-character graphemes, so marks never get detached) */
+function wrongOf(g){const c=g.charCodeAt(0);
+ if(c>=97&&c<=122)return String.fromCharCode((c-97+1)%26+97);if(c>=65&&c<=90)return String.fromCharCode((c-65+1)%26+65);
+ return String.fromCharCode(0x0E01+(c-0x0E01+1)%46)}
+/* types ch[] out one by one with cursor a riding the end; if fix, a typo is planted and a SECOND cursor arrives to correct it */
+async function typeText(k,a,ch,fix){
+ const gap=Math.min(48,1700/ch.length);let bad=-1,good='';
+ if(fix){const cand=[];ch.forEach((c,i)=>{if(i>=3&&i<=ch.length-6&&c.textContent.length===1&&/[A-Za-zก-ฮ]/.test(c.textContent))cand.push(i)});
+  if(cand.length){bad=cand[Math.floor(Math.random()*cand.length)];good=ch[bad].textContent;ch[bad].textContent=wrongOf(good);ch[bad].classList.add('typo')}}
+ for(let i=0;i<ch.length;i++){ch[i].style.opacity=1;
+  if(i%3===0||i===ch.length-1){const c=ch[i].getBoundingClientRect();aim(a,c.right+scrollX+4,c.bottom+scrollY+2,110)}
+  await sleep(gap);
+  if(bad>=0&&i===Math.min(bad+3,ch.length-1)){                    /* the typist has gone a few letters past the mistake... */
+   say(a,'Oops, typo!',1700);await sleep(650);
+   const c=ch[bad].getBoundingClientRect(),cx=c.left+scrollX+c.width/2,cy=c.top+scrollY+c.height/2,[ex,ey]=entry(cx,cy),b=spawn(ex,ey);
+   b.classList.add('busy');hud();
+   await go(b,cx,cy+c.height*.55,rnd(450,600));say(b,'I\'ll fix that',1300);   /* ...and a second cursor flies in to fix it */
+   const s=selBox({left:c.left+scrollX,top:c.top+scrollY,width:c.width,height:c.height},b,true);
+   await pulse(b);await sleep(250);ch[bad].textContent=good;ch[bad].classList.remove('typo');b.classList.add('tap');await sleep(200);b.classList.remove('tap');
+   say(b,'Fixed ✓',900);await sleep(450);s.remove();bad=-1;leave(b);}}}   /* leave() not awaited: the typist carries on */
+/* numbers count up when their block is revealed */
+function countUp(k){const n=k.querySelector('.num');if(!n||k._counted)return;k._counted=1;
+ const to=+k.dataset.to,t0=performance.now(),T=1400;
+ const f=now=>{const t=Math.min((now-t0)/T,1),e=1-Math.pow(1-t,3);n.textContent=String(Math.round(to*e));if(t<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+function charify(k){const w=document.createTreeWalker(k,NodeFilter.SHOW_TEXT),nodes=[],chars=[];while(w.nextNode())nodes.push(w.currentNode);
+ nodes.forEach(n=>{if(!n.nodeValue.trim())return;const f=document.createDocumentFragment();
+  for(const g of(seg?[...seg.segment(n.nodeValue)].map(x=>x.segment):[...n.nodeValue])){const s=document.createElement('span');s.textContent=g;f.appendChild(s);chars.push(s)}n.replaceWith(f)});return chars}
+/* picture-like blocks get their own three moves: swept in left to right, dragged in from off-screen, or slowly emerging */
+function pickStyle(r,k){
+ if(k.matches('.photo,.work,.mk,.quote')){   /* pictures keep every normal move and ALSO get the extra ones (weighted x2 so they show up) */
+  const p=['drag','wipe','resize','drop','pair','fly','fly','emerge','emerge'].filter(s=>s!==lastStyle);return lastStyle=p[Math.floor(Math.random()*p.length)]}
+ const base=r.height<70?['drag','wipe']:['drag','wipe','resize','drop','pair'];
+ const tl=k.textContent.trim().length,pool=(typable(k)?base.concat('type','type','duo',tl>=12?['typefix','typefix']:[]).flat():base).filter(s=>s!==lastStyle||pool0(base));
+ return lastStyle=pool[Math.floor(Math.random()*pool.length)]}
+const pool0=b=>b.length<2;
+function entry(x0,y0){const side=Math.floor(Math.random()*4),j=()=>rnd(-120,120);   /* cursors arrive from any edge of the screen */
+ return side===0?[-30,y0+j()]:side===1?[innerWidth+10,y0+j()]:side===2?[x0+j(),scrollY-30]:[x0+j(),scrollY+innerHeight+30]}
+async function leave(...as){as.forEach(a=>{a.style.opacity=0;AG.delete(a)});hud();await sleep(450);as.forEach(a=>a.remove())}
+function release(k,a,fx){k.classList.remove('pre');k.classList.add('fx-'+fx);setTimeout(()=>k.classList.remove('fx-'+fx),900);built++;a.classList.remove('tap');hud()}
+const pulse=async a=>{a.classList.add('tap');await sleep(130);a.classList.remove('tap')};
+async function job(k,my){
+ const {r}=target(k),x0=clamp(r.left-6,10,innerWidth-30),y0=Math.max(r.top-6,50),
+  x1=clamp(r.left+r.width+6,10,innerWidth-30),y1=Math.max(r.top+r.height+6,50),ym=(y0+y1)/2,xm=(x0+x1)/2;
+ const st=pickStyle(r,k),[sx,sy]=entry(x0,y0),a=spawn(sx,sy);a.classList.add('busy');hud();
+ let s=null,b=null;
+ if(Math.random()<.4)setTimeout(()=>say(a,COMMENTS[Math.floor(Math.random()*COMMENTS.length)]),480);   /* sometimes the cursor leaves a comment */
+ if(st==='drag'){                                        /* fly to the corner, drag the frame out, release */
+  await go(a,x0,y0,rnd(350,520));a.classList.add('tap');s=selBox(r,a);await go(a,x1,y1,400);release(k,a,'blurIn')}
+ else if(st==='fly'){                                    /* grab the picture outside the screen and drag it in */
+  /* like a presenter dragging a picture onto a slide: the cursor holds one point of the picture the whole way, the picture is
+     carried along a slight arc, tilted and a touch bigger while held, then dropped and settled */
+  const fromLeft=r.left+r.width/2<innerWidth/2,dx=fromLeft?-(r.left+r.width+80):innerWidth-r.left+80,dy0=rnd(-110,110),
+   gx=r.left+r.width*(fromLeft?.78:.22),gy=r.top+Math.min(r.height*.3,70);
+  k.style.transition='none';k.classList.remove('pre');built++;hud();
+  a.style.transition='none';a.classList.add('tap');a.style.opacity=1;
+  const T=1150,t0=performance.now();
+  await new Promise(res=>{const f=now=>{const t=Math.min((now-t0)/T,1),inv=Math.pow(1-t,3),arc=Math.sin(Math.PI*t)*-40,
+    tx=dx*inv,ty=dy0*inv+arc,rot=(fromLeft?-5:5)*inv,sc=1+.05*Math.sin(Math.PI*Math.min(1,t*1.25));
+   k.style.transform='translate('+tx+'px,'+ty+'px) rotate('+rot+'deg) scale('+sc+')';
+   a.style.transform='translate('+(gx+tx)+'px,'+(gy+ty)+'px)';
+   t<1?requestAnimationFrame(f):res()};requestAnimationFrame(f)});
+  k.style.transform='';k.style.transition='';a.classList.remove('tap');
+  k.animate([{transform:'scale(1.025)'},{transform:'none'}],{duration:240,easing:'ease-out'});await sleep(260)}
+ else if(st==='emerge'){                                 /* slowly surfaces while the cursor drifts up over it */
+  await go(a,xm,y1,rnd(380,520));a.classList.add('tap');
+  k.classList.remove('pre');k.animate([{opacity:0,transform:'scale(.93)',filter:'blur(14px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:1500,easing:'ease-out'});built++;hud();
+  aim(a,xm,y0+(y1-y0)*.35,1400);await sleep(1500)}
+ else if(st==='type'||st==='typefix'||st==='duo'){      /* typefix = a typo gets fixed by a 2nd cursor; duo = a 2nd cursor frames and tidies the block meanwhile */
+  /* (type = plain typing) */                                  /* click into the block, then type it out letter by letter, cursor riding the end of the text */
+  const ch=k._chars||(k._chars=charify(k));ch.forEach(c=>c.style.opacity=0);
+  await go(a,x0,y0,rnd(350,520));await pulse(a);
+  k.classList.remove('pre');built++;hud();
+  if(st==='duo'){
+   const [ex,ey]=entry(x1,y1);b=spawn(ex,ey);b.classList.add('busy');hud();
+   await Promise.all([typeText(k,a,ch,false),(async()=>{
+    await go(b,x1,y1,rnd(500,700));s=selBox(r,b,true);say(b,'Framing this up',1300);
+    for(const [x,y] of [[x1,y0],[x0,y0],[x0,y1]]){b.classList.add('tap');await go(b,x,y,260);b.classList.remove('tap')}
+    say(b,'All good ✓',1000)})()])}
+  else await typeText(k,a,ch,st==='typefix');
+  await sleep(150)}
+ else if(st==='wipe'){                                  /* click the left edge, then the content is swept in left to right under the cursor */
+  await go(a,x0,ym,rnd(350,520));await pulse(a);aim(a,x1,ym,650);release(k,a,'wipeR');await sleep(680)}
+ else if(st==='resize'){                                 /* frame appears whole, cursor tugs each corner handle in turn */
+  await go(a,x0,y0,rnd(350,520));s=selBox(r,a,true);
+  for(const [x,y] of [[x1,y0],[x1,y1],[x0,y1]]){a.classList.add('tap');await go(a,x,y,230);a.classList.remove('tap')}
+  release(k,a,'scaleIn')}
+ else if(st==='drop'){                                   /* grab the block from above and let it drop into place */
+  await go(a,xm,y0-24,rnd(350,520));a.classList.add('tap');release(k,a,'slideIn');a.classList.add('tap');await go(a,xm,y0+20,520)}
+ else{                                                   /* two cursors from opposite sides pull the frame open together */
+  b=spawn(sx<innerWidth/2?innerWidth+10:-30,y1+rnd(-80,80));b.classList.add('busy');hud();
+  await Promise.all([go(a,x0,y0,rnd(380,520)),go(b,x1,y1,rnd(380,520))]);
+  s=selBox(r,a,true);a.classList.add('tap');b.classList.add('tap');
+  await Promise.all([go(a,x1,y0,300),go(b,x0,y1,300)]);release(k,a,'scaleIn');b.classList.remove('tap')}
+ await sleep(380);if(s)s.remove();await leave(...[a,b].filter(Boolean))}
+function reveal(k){if(reduce){k.classList.remove('pre');built++;hud();return}job(k,epoch)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.target.classList.contains('pre')&&!e.target._q){e.target._q=1;reveal(e.target)}}),{threshold:0,rootMargin:'0px 0px -6% 0px'});   /* trigger as soon as a block pokes into the screen, so the build happens in view without long blank gaps */
+/* at the very bottom of the page the last blocks can never leave the bottom 28% band, so reveal whatever is on screen */
+addEventListener('scroll',()=>{if(scrollY+innerHeight<document.documentElement.scrollHeight-6)return;
+ rv.forEach(k=>{const r=k.getBoundingClientRect();if(k.classList.contains('pre')&&!k._q&&r.top<innerHeight&&r.bottom>0){k._q=1;reveal(k)}})},{passive:true});
+const mo=new MutationObserver(ms=>ms.forEach(m=>{if(!m.target.classList.contains('pre'))countUp(m.target)}));
+rv.filter(k=>k.dataset.to).forEach(k=>mo.observe(k,{attributes:true,attributeFilter:['class']}));
+function start(){epoch++;built=0;rv.forEach(k=>{if(k.dataset.to){k._counted=0;k.querySelector('.num').textContent='00'}k.classList.add('pre');k._q=0;io.unobserve(k);io.observe(k)});hud()}
+document.getElementById('rep').onclick=()=>{scrollTo({top:0,behavior:'smooth'});setTimeout(start,500)};
+start();
+</script>
+</body>
+</html>
